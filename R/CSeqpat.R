@@ -29,7 +29,8 @@ CSeqpat <- function (filepath, minsupport,docdelim) {
 
   n <- 1
 
-  docs_inp <- utils::read.csv(filepath,header=FALSE,sep = docdelim,stringsAsFactors = FALSE)
+  docs_inp <- utils::read.csv(filepath,header=FALSE,sep = docdelim,col.names=c("text"),stringsAsFactors = FALSE)
+  docs_inp <- cbind(doc_id=seq(1:nrow(docs_inp)),docs_inp)
   vcorp <- tm::VCorpus(tm::DataframeSource(docs_inp))
 
   repeat {
