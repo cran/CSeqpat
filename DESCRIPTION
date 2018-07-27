@@ -1,7 +1,7 @@
 Package: CSeqpat
 Type: Package
 Title: Frequent Contiguous Sequential Pattern Mining of Text
-Version: 0.1.1
+Version: 0.1.2
 Author: Anantha Janakiraman
 Maintainer: Anantha Janakiraman <anantharaman.j@gmail.com>
 Description: Mines contiguous sequential patterns in text.
@@ -12,6 +12,6 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2018-07-01 18:29:01 UTC; anantha
+Packaged: 2018-07-26 23:54:37 UTC; anantha
 Repository: CRAN
-Date/Publication: 2018-07-02 14:10:03 UTC
+Date/Publication: 2018-07-27 04:10:03 UTC

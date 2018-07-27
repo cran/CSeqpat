@@ -4,14 +4,28 @@
 \alias{CSeqpat}
 \title{Mining Frequent Contiguous Sequential Patterns in a Text Corpus}
 \usage{
-CSeqpat(filepath, minsupport, docdelim)
+CSeqpat(filepath, phraselenmin = 1, phraselenmax = 99999, minsupport = 1,
+  docdelim, stopword = FALSE, stemword = FALSE, lower = FALSE,
+  removepunc = FALSE)
 }
 \arguments{
 \item{filepath}{Path to the text file/text corpus}
 
+\item{phraselenmin}{Minimum number of words in a phrase}
+
+\item{phraselenmax}{Maximum number of words in a phrase}
+
 \item{minsupport}{Minimum absolute support for mining the patterns}
 
 \item{docdelim}{Document delimiter in the corpus}
+
+\item{stopword}{Remove stopwords from the document corpus (boolean)}
+
+\item{stemword}{Perform stemming on the document corpus (boolean)}
+
+\item{lower}{Lower case all words in document corpus (boolean)}
+
+\item{removepunc}{Remove punctuations from document corpus (boolean)}
 }
 \value{
 A dataframe containing the frequent phrase patterns with their absolute support
@@ -20,9 +34,9 @@ A dataframe containing the frequent phrase patterns with their absolute support
 Takes in the filepath and minimum support and performs pattern mining
 }
 \examples{
-test1 <- c("hoagie institution food year year road ",
+test1 <- c("hoagie institution food year road ",
 "place little dated opened weekend fresh food")
 tf <- tempfile()
 writeLines(test1, tf)
-CSeqpat(tf, 2, "\\t")
+CSeqpat(tf,1,2,2,"\\t",TRUE,FALSE,TRUE,FALSE)
 }
